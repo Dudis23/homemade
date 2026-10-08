@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Trabalhe Conosco - Formulário de Contratação</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body class="bg-light">
+
+<div class="container py-5" style="max-width: 640px;">
+
+  <!-- Título da página -->
+  <header class="text-center mb-4">
+    <h1 class="h2 fw-bold">Formulário de Contratação</h1>
+    <p class="text-muted">Preencha os dados abaixo e participe do nosso processo seletivo.</p>
+  </header>
+
+  <!-- CARD DE EXPLICAÇÃO -->
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-body">
+      <h2 class="h5 text-primary border-bottom pb-2">Classes utilizadas</h2>
+      <ul class="mb-0 text-secondary small">
+        <li><strong>.card / .card-header / .card-body / .card-footer:</strong> estrutura do cartão com cabeçalho, corpo e rodapé.</li>
+        <li><strong>.dropdown / .dropdown-toggle / .dropdown-menu / .dropdown-item:</strong> menus suspensos para escolher área e nível.</li>
+        <li><strong>.form-label / .form-control:</strong> rótulos e campos de texto, e-mail e arquivo.</li>
+        <li><strong>.input-group / .input-group-text:</strong> prefixo "R$" no campo de salário.</li>
+        <li><strong>.needs-validation / .invalid-feedback:</strong> mensagens de validação do próprio Bootstrap.</li>
+        <li><strong>.btn / .btn-primary / .d-grid:</strong> botão de envio ocupando toda a largura.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CARD DO FORMULÁRIO -->
+  <div class="card shadow border-0">
+
+    <div class="card-header bg-primary text-white py-3">
+      <h2 class="h4 mb-0">Trabalhe Conosco</h2>
+      <small class="opacity-75">Vagas abertas para Tecnologia e Design</small>
+    </div>
+
+    <div class="card-body p-4">
+      <form id="formContratacao" class="needs-validation" novalidate>
+
+        <!-- Nome -->
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome completo</label>
+          <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" autocomplete="name" required>
+          <div class="invalid-feedback">Informe seu nome completo.</div>
+        </div>
+
+        <!-- E-mail -->
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail profissional</label>
+          <input type="email" class="form-control" id="email" placeholder="seu.email@exemplo.com" autocomplete="email" required>
+          <div class="invalid-feedback">Informe um e-mail válido.</div>
+        </div>
+
+        <!-- DROPDOWN: Área de atuação -->
+        <div class="mb-3">
+          <label class="form-label d-block" id="labelCargo">Área de atuação desejada</label>
+          <div class="dropdown" data-dropdown>
+            <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start d-flex justify-content-between align-items-center"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="labelCargo">
+              <span data-dropdown-label>Selecione uma opção...</span>
+            </button>
+            <ul class="dropdown-menu w-100 shadow">
+              <li><button class="dropdown-item" type="button" data-value="frontend">Desenvolvedor(a) Front-end</button></li>
+              <li><button class="dropdown-item" type="button" data-value="backend">Desenvolvedor(a) Back-end</button></li>
+              <li><button class="dropdown-item" type="button" data-value="fullstack">Desenvolvedor(a) Full-stack</button></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><button class="dropdown-item" type="button" data-value="ux">Designer UX/UI</button></li>
+            </ul>
+            <input type="hidden" name="cargo" required>
+            <div class="invalid-feedback">Escolha uma área de atuação.</div>
+          </div>
+        </div>
+
+        <!-- DROPDOWN: Nível de experiência -->
+        <div class="mb-3">
+          <label class="form-label d-block" id="labelNivel">Nível de experiência</label>
+          <div class="dropdown" data-dropdown>
+            <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="labelNivel">
+              <span data-dropdown-label>Selecione uma opção...</span>
+            </button>
+            <ul class="dropdown-menu w-100 shadow">
+              <li><button class="dropdown-item" type="button" data-value="estagio">Estágio</button></li>
+              <li><button class="dropdown-item" type="button" data-value="junior">Júnior</button></li>
+              <li><button class="dropdown-item" type="button" data-value="pleno">Pleno</button></li>
+              <li><button class="dropdown-item" type="button" data-value="senior">Sênior</button></li>
+            </ul>
+            <input type="hidden" name="nivel" required>
+            <div class="invalid-feedback">Escolha seu nível de experiência.</div>
+          </div>
+        </div>
+
+        <!-- Pretensão salarial -->
+        <div class="mb-3">
+          <label for="salario" class="form-label">Pretensão salarial</label>
+          <div class="input-group">
+            <span class="input-group-text">R$</span>
+            <input type="text" class="form-control" id="salario" inputmode="decimal" placeholder="Ex: 5.000,00">
+          </div>
+          <div class="form-text">Campo opcional.</div>
+        </div>
+
+        <!-- Currículo -->
+        <div class="mb-4">
+          <label for="curriculo" class="form-label">Anexar currículo (PDF)</label>
+          <input type="file" class="form-control" id="curriculo" accept=".pdf,application/pdf" required>
+          <div class="invalid-feedback">Anexe seu currículo em PDF.</div>
+        </div>
+
+        <!-- Envio -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-lg">Enviar candidatura</button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="card-footer text-muted small text-center py-3">
+      Seus dados serão usados apenas para o processo seletivo.
+    </div>
+
+  </div>
+
+  <!-- Mensagem de sucesso (card) -->
+  <div id="sucesso" class="card border-success shadow-sm mt-4 d-none">
+    <div class="card-body text-success text-center">
+      <strong>Candidatura enviada com sucesso!</strong> Entraremos em contato em breve.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('formContratacao');
+
+    // Faz os dropdowns do Bootstrap funcionarem como um "select"
+    document.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+      const label = dd.querySelector('[data-dropdown-label]');
+      const input = dd.querySelector('input[type="hidden"]');
+      const toggle = dd.querySelector('.dropdown-toggle');
+      const feedback = dd.querySelector('.invalid-feedback');
+
+      dd.querySelectorAll('.dropdown-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+          input.value = item.dataset.value;
+          label.textContent = item.textContent;
+          toggle.classList.remove('btn-outline-secondary', 'btn-outline-danger');
+          toggle.classList.add('btn-outline-primary');
+          feedback.classList.remove('d-block');
+        });
+      });
+    });
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      let valido = form.checkValidity();
+
+      // Validação dos dropdowns (input hidden não exibe erro sozinho)
+      form.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+        const input = dd.querySelector('input[type="hidden"]');
+        const toggle = dd.querySelector('.dropdown-toggle');
+        const feedback = dd.querySelector('.invalid-feedback');
+        if (!input.value) {
+          valido = false;
+          toggle.classList.replace('btn-outline-secondary', 'btn-outline-danger');
+          feedback.classList.add('d-block');
+        }
+      });
+
+      form.classList.add('was-validated');
+
+      if (valido) {
+        document.getElementById('sucesso').classList.remove('d-none');
+        form.reset();
+        form.classList.remove('was-validated');
+        form.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+          dd.querySelector('[data-dropdown-label]').textContent = 'Selecione uma opção...';
+          dd.querySelector('.dropdown-toggle').className =
+            'btn btn-outline-secondary dropdown-toggle w-100 text-start';
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

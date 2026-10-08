@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Cards e Dropdowns - Temas Separados</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-5 mb-5">
+    <h2 class="text-center mb-5">Estudo Bootstrap 5: Temas Separados</h2>
+
+    <!-- ==========================================
+         TEMA 1: BOOTSTRAP CARDS
+    =========================================== -->
+    <div class="p-4 bg-light border rounded mb-5">
+        <h2 class="text-primary border-bottom pb-2 mb-4">TEMA 1: CARDS (Cartões)</h2>
+        <p class="text-muted">Um card é uma caixa com bordas flexível e expansível que inclui opções de cabeçalhos e rodapés, cores de fundo e imagens.</p>
+
+        <!-- Exemplo Card 1 -->
+        <h4 class="mt-4">1. Card Básico</h4>
+        <div class="mb-3">
+            <p><strong>Classes usadas:</strong><br>
+            <strong>.card:</strong> Cria a estrutura principal e a borda.<br>
+            <strong>.card-body:</strong> Aplica o espaçamento (padding) ao redor do texto.</p>
+        </div>
+        <div class="card mb-5" style="max-width: 400px;">
+            <div class="card-body">
+                Este é um texto simples dentro de um card básico.
+            </div>
+        </div>
+
+        <!-- Exemplo Card 2 -->
+        <h4>2. Card com Cabeçalho e Rodapé</h4>
+        <div class="mb-3">
+            <p><strong>Classes usadas:</strong><br>
+            <strong>.card-header:</strong> Cria uma faixa no topo do card separada por uma linha.<br>
+            <strong>.card-footer:</strong> Cria uma faixa na base do card separada por uma linha.</p>
+        </div>
+        <div class="card mb-5" style="max-width: 400px;">
+            <div class="card-header bg-primary text-white">
+                Cabeçalho do Card
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Título Interno</h5>
+                <p class="card-text">O conteúdo principal fica aqui no meio.</p>
+            </div>
+            <div class="card-footer text-muted">
+                Rodapé do Card
+            </div>
+        </div>
+
+        <!-- Exemplo Card 3 -->
+        <h4>3. Card com Imagem e Overlay (Sobreposição)</h4>
+        <div class="mb-3">
+            <p><strong>Classes usadas:</strong><br>
+            <strong>.card-img-top:</strong> Arredonda os cantos superiores da imagem.<br>
+            <strong>.card-img-overlay:</strong> Permite que o texto flutue por cima da imagem, como um plano de fundo.</p>
+        </div>
+        <div class="card text-white mb-4" style="max-width: 500px;">
+            <img class="card-img-top" src="https://picsum.photos/500/250?random=1" alt="Imagem">
+            <div class="card-img-overlay" style="background-color: rgba(0,0,0,0.5);">
+                <h4 class="card-title">Texto sobre a imagem</h4>
+                <p class="card-text">Isso é útil para banners ou destaques.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         TEMA 2: BOOTSTRAP DROPDOWNS
+    =========================================== -->
+    <div class="p-4 bg-light border rounded">
+        <h2 class="text-success border-bottom pb-2 mb-4">TEMA 2: DROPDOWNS (Menus Suspensos)</h2>
+        <p class="text-muted">Um dropdown é um menu que pode ser alternado (aberto e fechado) para o usuário escolher um valor em uma lista.</p>
+
+        <!-- Exemplo Dropdown 1 -->
+        <h4 class="mt-4">1. Dropdown Básico</h4>
+        <div class="mb-3">
+            <p><strong>Classes e atributos usados:</strong><br>
+            <strong>.dropdown:</strong> Envolve tudo (o botão e a lista).<br>
+            <strong>.dropdown-toggle</strong> e <strong>data-bs-toggle="dropdown":</strong> Fazem o botão reconhecer o clique e mostram a setinha.<br>
+            <strong>.dropdown-menu</strong> e <strong>.dropdown-item:</strong> Criam a caixa do menu e os links clicáveis.</p>
+        </div>
+        <div class="dropdown mb-5">
+            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown">
+                Menu Básico
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Ação 1</a></li>
+                <li><a class="dropdown-item" href="#">Ação 2</a></li>
+                <li><a class="dropdown-item" href="#">Ação 3</a></li>
+            </ul>
+        </div>
+
+        <!-- Exemplo Dropdown 2 -->
+        <h4>2. Cabeçalhos, Divisores e Itens Ativos</h4>
+        <div class="mb-3">
+            <p><strong>Classes usadas:</strong><br>
+            <strong>.dropdown-header:</strong> Adiciona um título descritivo (não clicável) dentro do menu.<br>
+            <strong>.dropdown-divider:</strong> Adiciona uma linha horizontal para separar os itens.<br>
+            <strong>.active</strong> / <strong>.disabled:</strong> Destaca um item (azul) ou desativa (cinza).</p>
+        </div>
+        <div class="dropdown mb-5">
+            <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
+                Menu Completo
+            </button>
+            <ul class="dropdown-menu">
+                <li><h5 class="dropdown-header">Opções Visuais</h5></li>
+                <li><a class="dropdown-item active" href="#">Modo Escuro (Ativo)</a></li>
+                <li><a class="dropdown-item" href="#">Modo Claro</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><h5 class="dropdown-header">Restrito</h5></li>
+                <li><a class="dropdown-item disabled" href="#">Área VIP (Bloqueado)</a></li>
+            </ul>
+        </div>
+
+        <!-- Exemplo Dropdown 3 -->
+        <h4>3. Mudando a Direção (Dropup / Dropend)</h4>
+        <div class="mb-3">
+            <p><strong>Classes usadas:</strong><br>
+            <strong>.dropup:</strong> (Substitui o `.dropdown`) Faz o menu abrir para <strong>cima</strong>.<br>
+            <strong>.dropend:</strong> Faz o menu abrir para a <strong>direita</strong>.</p>
+        </div>
+        <div class="d-flex gap-3 mb-4">
+            
+            <div class="dropup">
+                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
+                    Abre para Cima
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Link 1</a></li>
+                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown dropend">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown">
+                    Abre para Direita
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Link 1</a></li>
+                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
